@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import BirthdayCard from "./components/birthdayCard";
+import ReasonDeteminer from "./components/reasonDerminer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    reason: "",
+    showCard: false
+  };
+
+  handleEscape = () => {
+    this.setState({ showCard: false });
+  };
+
+  handleGen = () => {
+    this.setState({ showCard: true });
+  };
+
+  handleChange = e => {
+    const reason = e.target.value;
+    this.setState({ reason });
+  };
+
+  render() {
+    const { reason, showCard } = this.state;
+    return (
+      <div>
+        {showCard ? (
+          <BirthdayCard reason={reason} onHandleClick={this.handleEscape} />
+        ) : (
+          <ReasonDeteminer
+            onHandleChange={this.handleChange}
+            value={reason}
+            onHandleGen={this.handleGen}
+          />
+        )}
+      </div>
+    );
+  }
 }
 
 export default App;
