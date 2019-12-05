@@ -2,22 +2,28 @@ body,
 html {
   margin: 0;
   padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-family: "Alatsi", sans-serif;
 }
 * {
   box-sizing: border-box;
 }
 .birthday-card {
-  background-image: url("./images/card.jpg");
+  // background-image: url("./images/card.jpg");
   background-repeat: no-repeat;
   background-position: center;
   height: 9vh;
   height: 100vh;
+  position: relative;
+  // border: solid;
+  display: inline-block;
 
   h2 {
     position: absolute;
     bottom: 0;
     left: calc((100% - 600px) / 2);
     width: 600px;
+    height: 600px;
     top: 50%;
     text-align: center;
     color: white;
@@ -27,7 +33,7 @@ html {
 .person-card {
   position: absolute;
   left: calc((100% - 394.234px) / 2);
-  top: 5%;
+  top: 6%;
   img {
     width: 77%;
     border-radius: 50%;
@@ -58,12 +64,18 @@ html {
     padding: 10px;
     border-radius: 20px;
     background-color: black;
-    border: none;
+    border: 1px solid black;
     color: white;
     font-weight: bold;
     cursor: pointer;
     width: 8%;
     position: absolute;
     right: 0;
+  }
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
   }
 }
