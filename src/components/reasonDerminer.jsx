@@ -11,7 +11,8 @@ const ReasonDeteminer = ({
   onHandleUploadSuccess,
   onHandleProgress,
   isUploading,
-  progress
+  progress,
+  imgUrl
 }) => {
   return (
     <div className="reason-determiner">
@@ -34,12 +35,12 @@ const ReasonDeteminer = ({
           onProgress={onHandleProgress}
           className="upload-button"
         >
-          Upload Image
+          {imgUrl === "" ? "Upload image" : "image uploaded"}
         </CustomUploadButton>
 
         {isUploading ? (
           <div className="progress-container">
-            <span>{progress}%</span>
+            <h1>{progress}%</h1>
             <div className="progress-bar">
               <div className="progress" style={{ width: `${progress}%` }}></div>
             </div>

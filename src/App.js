@@ -12,11 +12,19 @@ class App extends Component {
     showCard: false,
     isUploading: false,
     progress: 0,
-    imgUrl: ""
+    imgUrl: "",
+    avatar: ""
   };
 
   handleEscape = () => {
-    this.setState({ showCard: false });
+    const { avatar } = this.state;
+    firebase
+      .storage()
+      .ref(`images/${avatar}`)
+      .delete()
+      .then(() => console.log("Image deleted"))
+      .catch(console.log("Error occured"));
+    this.setState({ showCard: false, imgUrl: "" });
   };
 
   handleGen = () => {
@@ -68,6 +76,7 @@ class App extends Component {
             onHandleUploadSuccess={this.handleUploadSuccess}
             progress={progress}
             isUploading={isUploading}
+            imgUrl={imgUrl}
           />
         )}
       </div>
