@@ -1,10 +1,9 @@
 import React from "react";
-import person from "../images/person.jpg";
 
-const Person = () => {
+const Person = ({ imgUrl }) => {
   return (
     <div className="person-card">
-      <img src={person} alt="person" />
+      <img src={imgUrl} alt="person" />
     </div>
   );
 };

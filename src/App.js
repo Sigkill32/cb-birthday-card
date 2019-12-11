@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import BirthdayCard from "./components/birthdayCard";
 import ReasonDeteminer from "./components/reasonDerminer";
+import firebase from "firebase";
+import firebaseConfig from "./components/firebaseConfig";
+
+firebase.initializeApp(firebaseConfig);
 
 class App extends Component {
   state = {
     reason: "",
-    showCard: false
+    showCard: false,
+    isUploading: false,
+    progress: 0,
+    imgUrl: ""
   };
 
   handleEscape = () => {
@@ -21,17 +28,46 @@ class App extends Component {
     this.setState({ reason });
   };
 
+  handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
+
+  handleProgress = progress => this.setState({ progress });
+
+  handleUploadError = error => {
+    this.setState({ isUploading: false });
+    console.error(error);
+  };
+
+  handleUploadSuccess = filename => {
+    this.setState({ avatar: filename, progress: 100, isUploading: false });
+    firebase
+      .storage()
+      .ref("images")
+      .child(filename)
+      .getDownloadURL()
+      .then(url => this.setState({ imgUrl: url }));
+  };
+
   render() {
-    const { reason, showCard } = this.state;
+    const { reason, showCard, progress, isUploading, imgUrl } = this.state;
     return (
       <div>
         {showCard ? (
-          <BirthdayCard reason={reason} onHandleClick={this.handleEscape} />
+          <BirthdayCard
+            reason={reason}
+            onHandleClick={this.handleEscape}
+            imgUrl={imgUrl}
+          />
         ) : (
           <ReasonDeteminer
             onHandleChange={this.handleChange}
             value={reason}
             onHandleGen={this.handleGen}
+            onHandleProgress={this.handleProgress}
+            onHandleUploadError={this.handleUploadError}
+            onHandleUploadStart={this.handleUploadStart}
+            onHandleUploadSuccess={this.handleUploadSuccess}
+            progress={progress}
+            isUploading={isUploading}
           />
         )}
       </div>

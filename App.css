@@ -11,6 +11,8 @@ html {
 }
 
 .birthday-card {
+  background-repeat: no-repeat;
+  background-position: center;
   height: 9vh;
   height: 100vh;
   position: relative;
@@ -40,64 +42,38 @@ html {
 .reason-determiner {
   text-align: center;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
 }
 .reason-determiner .form-container {
   margin-top: 50vh;
   border: 1px solid grey;
+  width: 78%;
   display: inline-block;
   position: relative;
-  display: flex;
   border-radius: 20px;
-  margin: 0 30px;
 }
 .reason-determiner input {
-  width: 89%;
-  margin-left: 1%;
+  width: 98%;
+  padding: 10px;
   border: none;
   outline: none;
-  padding: 8px 0;
 }
 .reason-determiner button {
+  padding: 10px;
   border-radius: 20px;
   background-color: black;
   border: 1px solid black;
   color: white;
   font-weight: bold;
   cursor: pointer;
-  width: 10%;
-  text-transform: uppercase;
-  font-size: 10px;
-}
-.reason-determiner .progress-bar {
-  height: 3px;
-  width: 40%;
-  margin-left: 30px;
-  display: inline-block;
-  background-color: #eeeeee;
-}
-.reason-determiner .progress-bar .progress {
-  position: relative;
-  background-color: black;
-  height: 3px;
+  width: 8%;
+  position: absolute;
+  right: 0;
 }
 
 .upload-button {
   background-color: black;
   color: white;
   padding: 10px;
-  border-radius: 5px;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 10px;
-  cursor: pointer;
-  display: block;
-  margin-top: 20px;
-  margin-left: 30px;
-  width: 20%;
 }
 
 @media print {
@@ -106,4 +82,4 @@ html {
   }
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=App.css.map */

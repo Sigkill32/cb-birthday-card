@@ -9,13 +9,9 @@ html {
   box-sizing: border-box;
 }
 .birthday-card {
-  // background-image: url("./images/card.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
   height: 9vh;
   height: 100vh;
   position: relative;
-  // border: solid;
   display: inline-block;
 
   h2 {
@@ -43,35 +39,69 @@ html {
 .reason-determiner {
   text-align: center;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 
   .form-container {
     margin-top: 50vh;
     border: 1px solid grey;
-    width: 78%;
     display: inline-block;
     position: relative;
+    display: flex;
     border-radius: 20px;
+    margin: 0 30px;
   }
 
   input {
-    width: 98%;
-    padding: 10px;
+    width: 89%;
+    margin-left: 1%;
     border: none;
     outline: none;
+    padding: 8px 0;
   }
 
   button {
-    padding: 10px;
     border-radius: 20px;
     background-color: black;
     border: 1px solid black;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    width: 8%;
-    position: absolute;
-    right: 0;
+    width: 10%;
+    text-transform: uppercase;
+    font-size: 10px;
   }
+
+  .progress-bar {
+    height: 3px;
+    width: 40%;
+    margin-left: 30px;
+    display: inline-block;
+    background-color: #eeeeee;
+
+    .progress {
+      position: relative;
+      background-color: black;
+      height: 3px;
+    }
+  }
+}
+
+.upload-button {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 10px;
+  cursor: pointer;
+  display: block;
+  margin-top: 20px;
+  margin-left: 30px;
+  width: 20%;
 }
 
 @media print {
