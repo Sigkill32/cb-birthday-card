@@ -13,7 +13,8 @@ class App extends Component {
     isUploading: false,
     progress: 0,
     imgUrl: "",
-    avatar: ""
+    avatar: "",
+    angle: 0
   };
 
   handleEscape = () => {
@@ -55,8 +56,25 @@ class App extends Component {
       .then(url => this.setState({ imgUrl: url }));
   };
 
+  handleRotateLeft = () => {
+    this.setState(prevState => ({ angle: prevState.angle - 90 }));
+    console.log(this.state.angle);
+  };
+
+  handleRotateRight = () => {
+    this.setState(prevState => ({ angle: prevState.angle + 90 }));
+    console.log(this.state.angle);
+  };
+
   render() {
-    const { reason, showCard, progress, isUploading, imgUrl } = this.state;
+    const {
+      reason,
+      showCard,
+      progress,
+      isUploading,
+      imgUrl,
+      angle
+    } = this.state;
     return (
       <div>
         {showCard ? (
@@ -64,6 +82,9 @@ class App extends Component {
             reason={reason}
             onHandleClick={this.handleEscape}
             imgUrl={imgUrl}
+            onHandleRotateLeft={this.handleRotateLeft}
+            onHandleRotateRight={this.handleRotateRight}
+            angle={angle}
           />
         ) : (
           <ReasonDeteminer
