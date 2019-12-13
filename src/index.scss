@@ -112,6 +112,23 @@ html {
   position: absolute;
   right: -50%;
   top: 50%;
+  button {
+    margin: 0 2px;
+    cursor: pointer;
+  }
+  img {
+    width: 18px;
+  }
+
+  .back-button {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    margin-left: 40px;
+  }
 }
 
 @media print {

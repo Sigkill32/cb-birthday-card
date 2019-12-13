@@ -1,6 +1,8 @@
 import React from "react";
 import Person from "./person";
 import card from "../images/card.jpg";
+import left from "../images/left.svg";
+import right from "../images/right.svg";
 
 const BirthdayCard = ({
   reason,
@@ -16,9 +18,15 @@ const BirthdayCard = ({
       <Person imgUrl={imgUrl} angle={angle} />
       <h2>{reason}</h2>
       <div className="rotate-buttons">
-        <button onClick={onHandleRotateLeft}>Rotate Left</button>
-        <button onClick={onHandleRotateRight}>Rotate Right</button>
-        <button onClick={onHandleClick}>Back</button>
+        <button onClick={onHandleRotateLeft}>
+          <img src={left} alt="rotate left" />
+        </button>
+        <button onClick={onHandleRotateRight}>
+          <img src={right} alt="rotate right" />
+        </button>
+        <button onClick={onHandleClick} className="back-button">
+          Back
+        </button>
       </div>
     </div>
   );
