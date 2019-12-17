@@ -35,6 +35,7 @@ html {
 .person-card img {
   width: 77%;
   border-radius: 50%;
+  border: 5px solid #ebc965;
 }
 
 .reason-determiner {

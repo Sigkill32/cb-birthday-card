@@ -22,7 +22,7 @@ const ReasonDeteminer = ({
             type="text"
             onChange={onHandleChange}
             value={value}
-            placeholder="Your Reason"
+            placeholder="Type the text to be displayed"
           />
           <button onClick={onHandleGen}>Generate card</button>
         </div>
