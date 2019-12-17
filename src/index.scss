@@ -136,3 +136,22 @@ html {
     -webkit-print-color-adjust: exact;
   }
 }
+
+.controls {
+  position: absolute;
+  right: -50%;
+  top: 30%;
+  text-align: center;
+  button {
+    cursor: pointer;
+  }
+  img {
+    width: 20px;
+  }
+  .right-left {
+    display: flex;
+    // justify-content: space-between;
+    width: 126px;
+    // border: solid;
+  }
+}

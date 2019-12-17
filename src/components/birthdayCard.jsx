@@ -3,6 +3,7 @@ import Person from "./person";
 import card from "../images/card.jpg";
 import left from "../images/left.svg";
 import right from "../images/right.svg";
+import Controls from "./controls";
 
 const BirthdayCard = ({
   reason,
@@ -10,12 +11,18 @@ const BirthdayCard = ({
   imgUrl,
   onHandleRotateLeft,
   onHandleRotateRight,
-  angle
+  angle,
+  onHandleDown,
+  onHandleLeft,
+  onHandleRight,
+  onHandleUp,
+  onHandleReset,
+  top
 }) => {
   return (
     <div className="birthday-card">
       <img src={card} alt="" />
-      <Person imgUrl={imgUrl} angle={angle} />
+      <Person imgUrl={imgUrl} angle={angle} top={top} />
       <h2>{reason}</h2>
       <div className="rotate-buttons">
         <button onClick={onHandleRotateLeft}>
@@ -28,6 +35,13 @@ const BirthdayCard = ({
           Back
         </button>
       </div>
+      <Controls
+        onHandleDown={onHandleDown}
+        onHandleLeft={onHandleLeft}
+        onHandleRight={onHandleRight}
+        onHandleUp={onHandleUp}
+        onHandleReset={onHandleReset}
+      />
     </div>
   );
 };

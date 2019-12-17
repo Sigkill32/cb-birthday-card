@@ -14,7 +14,8 @@ class App extends Component {
     progress: 0,
     imgUrl: "",
     avatar: "",
-    angle: 0
+    angle: 0,
+    top: 6
   };
 
   handleEscape = () => {
@@ -66,6 +67,26 @@ class App extends Component {
     console.log(this.state.angle);
   };
 
+  handleUp = () => {
+    this.setState(prevState => ({ top: prevState.top - 0.5 }));
+  };
+
+  handleDown = () => {
+    this.setState(prevState => ({ top: prevState.top + 0.5 }));
+  };
+
+  handleLeft = () => {
+    console.log("l");
+  };
+
+  handleRight = () => {
+    console.log("right");
+  };
+
+  handleReset = () => {
+    this.setState({ top: 6 });
+  };
+
   render() {
     const {
       reason,
@@ -73,7 +94,8 @@ class App extends Component {
       progress,
       isUploading,
       imgUrl,
-      angle
+      angle,
+      top
     } = this.state;
     return (
       <div>
@@ -85,6 +107,12 @@ class App extends Component {
             onHandleRotateLeft={this.handleRotateLeft}
             onHandleRotateRight={this.handleRotateRight}
             angle={angle}
+            onHandleDown={this.handleDown}
+            onHandleLeft={this.handleLeft}
+            onHandleRight={this.handleRight}
+            onHandleUp={this.handleUp}
+            top={top}
+            onHandleReset={this.handleReset}
           />
         ) : (
           <ReasonDeteminer

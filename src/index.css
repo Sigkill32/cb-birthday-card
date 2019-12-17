@@ -127,5 +127,21 @@ html {
     -webkit-print-color-adjust: exact;
   }
 }
+.controls {
+  position: absolute;
+  right: -50%;
+  top: 30%;
+  text-align: center;
+}
+.controls button {
+  cursor: pointer;
+}
+.controls img {
+  width: 20px;
+}
+.controls .right-left {
+  display: flex;
+  width: 126px;
+}
 
 /*# sourceMappingURL=index.css.map */

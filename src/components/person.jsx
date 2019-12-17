@@ -1,8 +1,8 @@
 import React from "react";
 
-const Person = ({ imgUrl, angle }) => {
+const Person = ({ imgUrl, angle, top }) => {
   return (
-    <div className="person-card">
+    <div className="person-card" style={{ top: `${top}%` }}>
       <img
         src={imgUrl}
         alt="person"
