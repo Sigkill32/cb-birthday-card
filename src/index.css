@@ -130,7 +130,7 @@ html {
 }
 .controls {
   position: absolute;
-  right: -50%;
+  right: -180%;
   top: 30%;
   text-align: center;
 }
@@ -142,7 +142,8 @@ html {
 }
 .controls .right-left {
   display: flex;
-  width: 126px;
+  justify-content: space-between;
+  width: 130px;
 }
 
 /*# sourceMappingURL=index.css.map */

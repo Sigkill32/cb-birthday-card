@@ -9,11 +9,13 @@ const Controls = ({
   onHandleLeft,
   onHandleRight,
   onHandleUp,
-  onHandleReset
+  onHandleReset,
+  onHandleRangeChange
 }) => {
   return (
     <div className="controls">
-      <button onClick={onHandleUp}>
+      <div className="direction-controls">
+        <button onClick={onHandleUp} className="up">
         <img src={up} alt="UP" />
       </button>
       <div className="right-left">
@@ -25,9 +27,19 @@ const Controls = ({
           <img src={right} alt="RIGHT" />
         </button>
       </div>
-      <button onClick={onHandleDown}>
+      <button onClick={onHandleDown} className="down">
         <img src={down} alt="DOWN" />
       </button>
+      </div>
+      <input
+        type="range"
+        name="width"
+        min="50"
+        max="100"
+        step="10"
+        className="range"
+        onChange={onHandleRangeChange}
+      />
     </div>
   );
 };

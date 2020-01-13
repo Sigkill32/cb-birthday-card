@@ -140,7 +140,7 @@ html {
 
 .controls {
   position: absolute;
-  right: -50%;
+  right: -180%;
   top: 30%;
   text-align: center;
   button {
@@ -151,8 +151,8 @@ html {
   }
   .right-left {
     display: flex;
-    // justify-content: space-between;
-    width: 126px;
+    justify-content: space-between;
+    width: 130px;
     // border: solid;
   }
 }

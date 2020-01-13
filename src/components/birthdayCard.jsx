@@ -17,12 +17,13 @@ const BirthdayCard = ({
   onHandleRight,
   onHandleUp,
   onHandleReset,
-  top
+  top,
+  leftPos
 }) => {
   return (
     <div className="birthday-card">
       <img src={card} alt="" />
-      <Person imgUrl={imgUrl} angle={angle} top={top} />
+      <Person imgUrl={imgUrl} angle={angle} top={top} leftPos={leftPos} />
       <h2>{reason}</h2>
       <div className="rotate-buttons">
         <button onClick={onHandleRotateLeft}>
