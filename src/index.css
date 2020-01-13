@@ -33,7 +33,7 @@ html {
   top: 6%;
 }
 .person-card img {
-  width: 77%;
+  width: 70%;
   border-radius: 50%;
   border: 5px solid #ebc965;
 }
@@ -130,7 +130,7 @@ html {
 }
 .controls {
   position: absolute;
-  right: -180%;
+  right: -40%;
   top: 30%;
   text-align: center;
 }
@@ -140,7 +140,7 @@ html {
 .controls img {
   width: 20px;
 }
-.controls .right-left {
+.controls .direction-controls .right-left {
   display: flex;
   justify-content: space-between;
   width: 130px;

@@ -10,11 +10,15 @@ const Controls = ({
   onHandleRight,
   onHandleUp,
   onHandleReset,
-  onHandleRangeChange
+  onHandleRangeChange,
+  rangeValue,
+  imgWidth,
+  onHandleWidthChange
 }) => {
   return (
     <div className="controls">
       <div className="direction-controls">
+        <h5>Image controls</h5>
         <button onClick={onHandleUp} className="up">
         <img src={up} alt="UP" />
       </button>
@@ -33,12 +37,12 @@ const Controls = ({
       </div>
       <input
         type="range"
-        name="width"
-        min="50"
-        max="100"
+        min="0"
+        max="50"
         step="10"
         className="range"
         onChange={onHandleRangeChange}
+        value={rangeValue}
       />
     </div>
   );

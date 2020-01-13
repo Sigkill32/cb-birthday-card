@@ -18,12 +18,16 @@ const BirthdayCard = ({
   onHandleUp,
   onHandleReset,
   top,
-  leftPos
+  leftPos,
+  onHandleRangeChange,
+  rangeValue,
+  imgWidth,
+  onHandleWidthChange
 }) => {
   return (
     <div className="birthday-card">
       <img src={card} alt="" />
-      <Person imgUrl={imgUrl} angle={angle} top={top} leftPos={leftPos} />
+      <Person imgUrl={imgUrl} angle={angle} top={top} leftPos={leftPos} rangeValue={rangeValue} imgWidth/>
       <h2>{reason}</h2>
       <div className="rotate-buttons">
         <button onClick={onHandleRotateLeft}>
@@ -42,6 +46,8 @@ const BirthdayCard = ({
         onHandleRight={onHandleRight}
         onHandleUp={onHandleUp}
         onHandleReset={onHandleReset}
+        onHandleRangeChange={onHandleRangeChange}
+        rangeValue={rangeValue}
       />
     </div>
   );

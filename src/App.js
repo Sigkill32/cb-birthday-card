@@ -16,7 +16,8 @@ class App extends Component {
     avatar: "",
     angle: 0,
     top: 6,
-    leftPos: 20
+    leftPos: 20,
+    rangeValue: 0,
   };
 
   handleEscape = () => {
@@ -76,17 +77,20 @@ class App extends Component {
 
   handleLeft = () => {
     this.setState(prevState => ({ leftPos: prevState.leftPos - 0.5 }));
-    console.log(this.state.leftPos);
   };
 
   handleRight = () => {
     this.setState(prevState => ({ leftPos: prevState.leftPos + 0.5 }));
-    console.log(this.state.leftPos);
   };
 
   handleReset = () => {
     this.setState({ top: 6 });
   };
+
+  handleRangeChange = e => {
+    const { value: rangeValue } = e.target;
+    this.setState({ rangeValue })
+  }
 
   render() {
     const {
@@ -97,8 +101,10 @@ class App extends Component {
       imgUrl,
       angle,
       top,
-      leftPos
+      leftPos,
+      rangeValue
     } = this.state;
+    
     return (
       <div>
         {showCard ? (
@@ -116,6 +122,8 @@ class App extends Component {
             top={top}
             onHandleReset={this.handleReset}
             leftPos={leftPos}
+            onHandleRangeChange={this.handleRangeChange}
+            rangeValue={rangeValue}
           />
         ) : (
           <ReasonDeteminer
