@@ -1,6 +1,6 @@
 import React from "react";
 import Person from "./person";
-import card from "../images/card.jpg";
+// import card from "../images/card.jpg";
 import left from "../images/left.svg";
 import right from "../images/right.svg";
 import Controls from "./controls";
@@ -21,12 +21,12 @@ const BirthdayCard = ({
   leftPos,
   onHandleRangeChange,
   rangeValue,
-  imgWidth,
-  onHandleWidthChange
+  onHandleSelectCard,
+  cardValue
 }) => {
   return (
     <div className="birthday-card">
-      <img src={card} alt="" />
+      <img src={require(`../images/${cardValue}.jpg`)} alt="" />
       <Person imgUrl={imgUrl} angle={angle} top={top} leftPos={leftPos} rangeValue={rangeValue} imgWidth/>
       <h2>{reason}</h2>
       <div className="rotate-buttons">
@@ -48,6 +48,8 @@ const BirthdayCard = ({
         onHandleReset={onHandleReset}
         onHandleRangeChange={onHandleRangeChange}
         rangeValue={rangeValue}
+        onHandleSelectCard={onHandleSelectCard}
+        cardValue={cardValue}
       />
     </div>
   );

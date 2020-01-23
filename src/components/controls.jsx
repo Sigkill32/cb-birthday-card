@@ -12,8 +12,8 @@ const Controls = ({
   onHandleReset,
   onHandleRangeChange,
   rangeValue,
-  imgWidth,
-  onHandleWidthChange
+  onHandleSelectCard,
+  cardValue
 }) => {
   return (
     <div className="controls">
@@ -44,6 +44,11 @@ const Controls = ({
         onChange={onHandleRangeChange}
         value={rangeValue}
       />
+      <select name="cards" onChange={onHandleSelectCard} value={cardValue}>
+        <option value="card">Card 1</option>
+        <option value="card2">Card 2</option>
+        <option value="card3">Card 3</option>
+      </select>
     </div>
   );
 };

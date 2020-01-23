@@ -18,6 +18,7 @@ class App extends Component {
     top: 6,
     leftPos: 20,
     rangeValue: 0,
+    cardValue: 'card'
   };
 
   handleEscape = () => {
@@ -92,6 +93,11 @@ class App extends Component {
     this.setState({ rangeValue })
   }
 
+  handleSelectCard = e => {
+    const { value: cardValue } = e.target;
+    this.setState({ cardValue });
+  }
+
   render() {
     const {
       reason,
@@ -102,7 +108,8 @@ class App extends Component {
       angle,
       top,
       leftPos,
-      rangeValue
+      rangeValue,
+      cardValue
     } = this.state;
     
     return (
@@ -124,6 +131,8 @@ class App extends Component {
             leftPos={leftPos}
             onHandleRangeChange={this.handleRangeChange}
             rangeValue={rangeValue}
+            onHandleSelectCard={this.handleSelectCard}
+            cardValue={cardValue}
           />
         ) : (
           <ReasonDeteminer
