@@ -142,8 +142,12 @@ html {
 }
 .controls .direction-controls .right-left {
   display: flex;
-  justify-content: space-between;
-  width: 130px;
+  justify-content: center;
+  width: 200px;
+}
+.controls select {
+  display: block;
+  margin: 30px 0;
 }
 
 /*# sourceMappingURL=index.css.map */
